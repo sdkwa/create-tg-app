@@ -1,5 +1,11 @@
 # create-tg-app
 
+[![CI](https://github.com/sdkwa/create-tg-app/actions/workflows/ci.yml/badge.svg)](https://github.com/sdkwa/create-tg-app/actions/workflows/ci.yml)
+[![NPM Version](https://img.shields.io/npm/v/@sdkwa/create-tg-app)](https://www.npmjs.com/package/@sdkwa/create-tg-app)
+[![NPM Downloads](https://img.shields.io/npm/dm/@sdkwa/create-tg-app)](https://www.npmjs.com/package/@sdkwa/create-tg-app)
+[![License](https://img.shields.io/npm/l/@sdkwa/create-tg-app)](https://github.com/sdkwa/create-tg-app/blob/main/LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/sdkwa/create-tg-app)](https://github.com/sdkwa/create-tg-app/releases)
+
 Automated tool for creating Telegram applications without a web interface. Simplifies the process of generating Telegram apps by providing a straightforward API.
 
 ## Installation

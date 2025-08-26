@@ -4,6 +4,14 @@
   "description": "Automated tool for creating Telegram applications without a web interface",
   "author": "sdkwa <sdkwa@sdkwa.pro>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdkwa/create-tg-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sdkwa/create-tg-app/issues"
+  },
+  "homepage": "https://github.com/sdkwa/create-tg-app#readme",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
