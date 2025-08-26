@@ -1,7 +1,7 @@
 {
   "name": "@sdkwa/create-tg-app",
-  "version": "0.0.2",
-  "description": "Automated creation of telegram applications",
+  "version": "0.0.3",
+  "description": "Automated tool for creating Telegram applications without a web interface",
   "author": "sdkwa <sdkwa@sdkwa.pro>",
   "license": "MIT",
   "main": "./dist/cjs/index.js",
@@ -38,5 +38,17 @@
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
     "prepack": "npm run build"
-  }
+  },
+  "keywords": [
+    "telegram",
+    "mtcute",
+    "gramjs",
+    "sdkwa",
+    "messenger",
+    "tgapi",
+    "api",
+    "tgapp",
+    "typescript",
+    "sdk"
+  ]
 }
