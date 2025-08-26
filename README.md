@@ -6,6 +6,8 @@
 [![License](https://img.shields.io/npm/l/@sdkwa/create-tg-app)](https://github.com/sdkwa/create-tg-app/blob/main/LICENSE)
 [![GitHub Release](https://img.shields.io/github/v/release/sdkwa/create-tg-app)](https://github.com/sdkwa/create-tg-app/releases)
 
+> 🌟 **Try it free on the cloud!** Instead of setting up this library locally, you can use our free cloud service at [https://sdkwa.pro](https://sdkwa.pro) to create Telegram applications without any installation or configuration required.
+
 Automated tool for creating Telegram applications without a web interface. Simplifies the process of generating Telegram apps by providing a straightforward API.
 
 ## Installation
