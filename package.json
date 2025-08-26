@@ -1,0 +1,41 @@
+{
+  "name": "@sdkwa/create-tg-app",
+  "version": "0.0.2",
+  "description": "Automated creation of telegram applications for mtcute",
+  "author": "sdkwa <sdkwa@sdkwa.pro>",
+  "license": "MIT",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "cheerio": "1.0.0-rc.12"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "rimraf": "6.0.1",
+    "typescript": "5.9.2"
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs"
+  }
+}
