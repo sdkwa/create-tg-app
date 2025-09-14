@@ -52,6 +52,10 @@ export class TelegramAppClient implements ITelegramApp {
         token: string,
         appParams: TelegramApp,
     ): Promise<TelegramApp> {
+        const existingApp = await this.getCredentials(token);
+        if(existingApp.apiHash && existingApp.apiId)
+            throw new Error(`Telegram app already exist. You can create one application per phone number. Credentials: ${JSON.stringify(existingApp)}`);
+
         const resultHtml = await this._client.get(TelegramAppRoutes.APPS, {
             headers: { Cookie: `stel_token=${token}` },
         })
@@ -87,7 +91,21 @@ export class TelegramAppClient implements ITelegramApp {
             headers: { Cookie: `stel_token=${token}` },
         })
 
-        const $ = cheerio.load(resultHtml.data)
+        const credentials = await this.parseApiCredentials(resultHtml.data);
+
+        if (!credentials.apiId) {
+            throw new Error("Couldn't find apiId. Try again")
+        }
+
+        if (!credentials.apiHash) {
+            throw new Error("Couldn't find apiHash. Try again")
+        }
+
+        return credentials
+    }
+
+    private async parseApiCredentials(rawHtml: string) {
+        const $ = cheerio.load(rawHtml)
         const formGroups = $('.form-group')
 
         const result: TelegramAppCredentials = {
@@ -108,15 +126,7 @@ export class TelegramAppClient implements ITelegramApp {
             }
         }
 
-        if (!result.apiId) {
-            throw new Error("Couldn't find apiId. Try again")
-        }
-
-        if (!result.apiHash) {
-            throw new Error("Couldn't find apiHash. Try again")
-        }
-
-        return result
+        return result;
     }
 
     async signIn(params: TelegramAppAuthParams): Promise<string> {

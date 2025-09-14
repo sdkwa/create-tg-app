@@ -1,6 +1,6 @@
 {
   "name": "@sdkwa/create-tg-app",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Automated tool for creating Telegram applications without a web interface",
   "author": "sdkwa <sdkwa@sdkwa.pro>",
   "license": "MIT",
